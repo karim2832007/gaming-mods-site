@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming-Mods</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body,html {
+      width:100%; height:100%; overflow:hidden;
+      background:#0a0a0a; color:#eee;
+      font-family:'Segoe UI',sans-serif; font-size:18px;
+    }
+    .hero {
+      position:relative; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      width:100%; height:100vh;
+      background:radial-gradient(circle at center,#111 0%,#000 80%);
+    }
+    .hero::before {
+      content:""; position:absolute; top:0; left:0;
+      width:100%; height:100%;
+      background:
+        linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px) 0 0,
+        linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px) 0 0;
+      background-size:50px 50px; opacity:0.1;
+      animation:shiftGrid 30s linear infinite;
+    }
+    @keyframes shiftGrid {
+      from { background-position:0 0; }
+      to   { background-position:1000px 1000px; }
+    }
+    .box { position:relative; z-index:1; text-align:center; padding:2rem; }
+    .title {
+      font-size:3.5rem; color:#FFD700;
+      text-shadow:0 0 10px #B8860B;
+      animation:fadeInDown 1.5s ease-out;
+    }
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-50px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .subtitle {
+      margin-top:1rem; font-size:1.5rem; color:#ccc;
+      animation:fadeIn 2s ease-in-out;
+    }
+    .info {
+      margin-top:1.25rem; font-size:1.5rem; color:#fff;
+    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    .cta {
+      margin-top:2rem; padding:1rem 2rem; font-size:1.25rem;
+      font-weight:bold; color:#fff; background:rgba(255,255,255,0.1);
+      border:2px solid #fff; border-radius:8px;
+      cursor:pointer; transition:.3s;
+      animation:fadeInUp 1.5s ease-out;
+    }
+    .cta:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 20px rgba(255,255,255,0.5);
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(50px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="box">
+      <h1 class="title">Gaming-Mods</h1>
+      <p class="subtitle">Your hub for mods, games, and community</p>
+      <p class="info">Explore our projects, play online, or download directly.</p>
+      <a href="privacy.html" class="cta">Privacy Policy</a>
+    </div>
+  </div>
+</body>
+</html>
